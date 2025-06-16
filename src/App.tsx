@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Sidebar from '@/components/main/Sidebar';
+import Thumbnail from '@/pages/Thumbnail';
+import AboutMe from '@/pages/AboutMe';
+import Skills from '@/pages/Skills';
+import Projects from '@/pages/Projects';
+import Contact from '@/pages/Contact';
+import '@/App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Sidebar theme={theme} onToggleTheme={toggleTheme} />
+      <div className="relative">
+        <Thumbnail />
+        <div className="bg-white">
+          <section id="aboutme" data-index="0" className="scroll-section">
+            <AboutMe />
+          </section>
+          <section id="skills" data-index="1" className="scroll-section">
+            <Skills />
+          </section>
+          <section id="projects" data-index="2" className="scroll-section">
+            <Projects />
+          </section>
+          <section id="contact" data-index="3" className="scroll-section">
+            <Contact />
+          </section>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
