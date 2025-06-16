@@ -5,6 +5,11 @@
   --color-bluePrimary: #0073a1;
 }
 @layer utilities {
+  .nowrap-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined', sans-serif;
