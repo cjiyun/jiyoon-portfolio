@@ -6,9 +6,6 @@ import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { fixupPluginRules } from '@eslint/compat';
-import { FlatCompat } from '@eslint/eslintrc';
-
-const compat = new FlatCompat();
 
 export default tseslint.config([
   js.configs.recommended,
@@ -37,6 +34,8 @@ export default tseslint.config([
       ...pluginReact.configs.flat.recommended.rules,
       ...pluginReact.configs['jsx-runtime'].rules,
       ...reactHooksPlugin.configs.recommended.rules,
+
+      'react/prop-types': 'off',
 
       'prettier/prettier': 'warn',
       'react-refresh/only-export-components': 'warn',
