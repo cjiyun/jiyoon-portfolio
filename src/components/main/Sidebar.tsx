@@ -84,7 +84,7 @@ const Sidebar = ({ theme, onToggleTheme }: SidebarProps): ReactElement => {
                   key={icon}
                   variants={sidebar.item}
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  className={`material-symbols-outlined hover-fill hover-expand cursor-pointer ${
+                  className={`material-symbols-outlined hover-expand cursor-pointer ${
                     activeMenu === idx ? 'is-active' : ''
                   }`}
                   onClick={() => handleMenuClick(idx)}
@@ -106,7 +106,7 @@ const Sidebar = ({ theme, onToggleTheme }: SidebarProps): ReactElement => {
               exit="exit"
               transition={{ duration: 0.5, ease: 'easeInOut' }}
               style={{ transformOrigin: 'center' }}
-              className="material-symbols-outlined hover-fill cursor-pointer"
+              className="material-symbols-outlined cursor-pointer"
               onClick={scrollToTop}
             >
               expand_circle_up
