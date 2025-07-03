@@ -1,11 +1,11 @@
 export const buttonVariants = {
-  hover: { scale: 1.1, backgroundColor: '#0073a1', color: '#fff', border: 'none' },
+  hover: { backgroundColor: '#0073a1', color: '#fff', borderColor: '#0073a1' },
   tap: { scale: 0.95 },
 };
 
 export const iconVariants = {
-  hover: { scale: 1.3 },
-  tap: { scale: 0.95 },
+  hover: { color: '#0073a1', transition: { duration: 0 } },
+  tap: { scale: 0.8 },
 };
 
 export const sidebar = {
@@ -20,5 +20,16 @@ export const sidebar = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 10 },
+  },
+};
+
+export const flipVariants = {
+  rest: {
+    rotateY: 0,
+    transition: { duration: 0.4 },
+  },
+  hover: {
+    rotateY: 180,
+    transition: { duration: 0.4 },
   },
 };

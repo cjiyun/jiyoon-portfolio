@@ -4,23 +4,25 @@ import type { ReactNode } from 'react';
 
 interface IconButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  href?: string;
   variants?: Variants;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,
-  onClick,
+  href,
   variants = iconVariants,
 }) => (
-  <motion.button
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     variants={variants}
     whileHover="hover"
     whileTap="tap"
     transition={{ duration: 0.3, ease: 'easeInOut' }}
-    onClick={onClick}
     className="cursor-pointer"
   >
     {children}
-  </motion.button>
+  </motion.a>
 );
