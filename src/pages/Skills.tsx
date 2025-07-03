@@ -42,7 +42,7 @@ const Skills = (): ReactElement => {
             </button>
           ))}
         </div>
-        <div className="grid w-full grid-cols-3 justify-items-center gap-10 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+        <div className="xs:grid-cols-4 grid w-full grid-cols-3 justify-items-center gap-10 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
           {SKILLS.map(skill => (
             <SkillItem key={skill.alt} skill={skill} selected={selected} />
           ))}

@@ -69,7 +69,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
         </div>
 
         {/* 카드 정보 */}
-        <div className="flex w-[250px] flex-col justify-center gap-4">
+        <div className="flex w-[280px] flex-col justify-center gap-4">
           <div className="flex justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
               {filtered[frontIdx].category.map(cat => (

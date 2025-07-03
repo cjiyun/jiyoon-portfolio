@@ -8,13 +8,13 @@ const AboutMe = (): ReactElement => {
   return (
     <div className="relative flex h-screen w-full flex-col">
       <SectionHeader title="About Me" />
-      <div className="absolute top-[138px] flex h-[calc(100%-138px)] items-center justify-between gap-[10%] py-10 lg:top-[100px]">
-        <div className="relative hidden h-full w-1/2 py-10 xl:flex">
-          <div className="border-bluePrimary absolute h-[calc(100%-120px)] w-[calc(100%-40px)] rounded-md border-2"></div>
+      <div className="absolute top-[138px] flex h-[calc(100%-138px)] items-center justify-between gap-[10%] py-12 lg:top-[100px]">
+        <div className="relative hidden h-full w-1/2 py-[30px] xl:flex">
+          <div className="border-bluePrimary absolute h-[calc(100%-60px)] w-[calc(100%-40px)] rounded-md border-2"></div>
           <img
             src="/images/aboutme-profile.png"
             alt="profile-image"
-            className="absolute top-20 left-10 h-[calc(100%-120px)] w-[calc(100%-40px)] justify-end rounded-md object-cover"
+            className="absolute top-[60px] left-[30px] h-[calc(100%-60px)] w-[calc(100%-40px)] justify-end rounded-md object-cover"
           />
         </div>
         <div className="bg-bg shadow-box h-fit min-h-full w-full space-y-10 rounded-lg p-10 xl:w-1/2 xl:space-y-5">
@@ -31,7 +31,7 @@ const AboutMe = (): ReactElement => {
                 FRONTEND
               </span>
               <div className="flex gap-2.5">
-                <h1 className="truncate text-3xl leading-none font-bold">최지윤</h1>
+                <h1 className="truncate text-2xl leading-none font-bold">최지윤</h1>
                 <div className="flex items-end gap-1.5">
                   {[AiFillGithub, AiOutlineMail].map((Icon, idx) => (
                     <IconButton key={idx}>
@@ -40,7 +40,7 @@ const AboutMe = (): ReactElement => {
                   ))}
                 </div>
               </div>
-              <span className="text-bluePrimary text-sm">#도전 #끈기 #성장 #UI/UX</span>
+              <span className="text-bluePrimary text-xs">#도전 #끈기 #성장 #UI/UX</span>
             </div>
           </div>
           <Vision title="⌜ 사용자 중심 설계 ⌟">
