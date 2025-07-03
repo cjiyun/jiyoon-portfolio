@@ -46,7 +46,7 @@ const Projects = (): ReactElement => {
   return (
     <div className="relative flex h-screen w-full">
       <SectionHeader title="Projects" />
-      <div className="absolute top-[138px] my-6 flex h-[calc(100%-200px)] w-full flex-col gap-6 lg:top-[100px] lg:my-10 lg:h-[calc(100%-180px)] lg:gap-12">
+      <div className="absolute top-[138px] my-6 flex h-[calc(100%-200px)] w-full flex-col gap-6 lg:top-[100px] lg:my-10 lg:h-[calc(100%-180px)] lg:gap-8">
         <div className="space-y-2.5 space-x-2.5">
           {MODES.map(({ mode, label }) => (
             <button
@@ -67,7 +67,7 @@ const Projects = (): ReactElement => {
               onClick={() => setFilters(filter)}
               className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
                 filters === filter
-                  ? 'bg-bluePrimary text-white'
+                  ? 'bg-bluePrimary border-bluePrimary text-white'
                   : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
               } `}
             >

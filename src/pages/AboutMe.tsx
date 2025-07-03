@@ -17,9 +17,9 @@ const AboutMe = (): ReactElement => {
             className="absolute top-[60px] left-[30px] h-[calc(100%-60px)] w-[calc(100%-40px)] justify-end rounded-md object-cover"
           />
         </div>
-        <div className="bg-bg shadow-box h-fit min-h-full w-full space-y-10 rounded-lg p-10 xl:w-1/2 xl:space-y-5">
+        <div className="bg-bg shadow-box h-fit min-h-full w-full space-y-5 rounded-lg p-10 xl:w-1/2 xl:space-y-5">
           <div className="flex items-center gap-5">
-            <div className="h-30 w-30 overflow-hidden rounded-lg xl:hidden">
+            <div className="h-24 w-24 overflow-hidden rounded-lg xl:hidden">
               <img
                 src="/images/aboutme-profile.png"
                 alt="profile-image"
@@ -27,7 +27,7 @@ const AboutMe = (): ReactElement => {
               />
             </div>
             <div>
-              <span className="bg-bluePrimary rounded-lg px-2 text-xs font-light text-white">
+              <span className="bg-bluePrimary rounded-full px-2 text-xs font-light text-white">
                 FRONTEND
               </span>
               <div className="flex gap-2.5">

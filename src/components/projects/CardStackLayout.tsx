@@ -43,7 +43,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
 
   return (
     <div className="px-8">
-      <div className="relative mx-auto flex w-full max-w-lg flex-col items-center gap-6">
+      <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-6">
         <div className="flex w-full items-center justify-between">
           <button onClick={() => setAction('prev')} className="cursor-pointer">
             <IoIosArrowBack size={36} />
@@ -69,7 +69,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
         </div>
 
         {/* 카드 정보 */}
-        <div className="flex w-[280px] flex-col justify-center gap-4">
+        <div className="flex max-w-96 flex-col justify-center gap-4">
           <div className="flex justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
               {filtered[frontIdx].category.map(cat => (
