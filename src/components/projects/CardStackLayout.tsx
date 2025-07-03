@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import type { ProjectT, ProjectRotation } from '@/types/type';
 import { IconButton } from '@/components/common/IconButton';
 import StackCardItem from '@/components/projects/StackCardItem';
-import { buttonVariants, cardStackVariants } from '@/animations/variants';
+import { cardStackVariants } from '@/animations/variants';
+import StackSkeleton from '@/components/projects/StackSkeleton';
 
 interface CardStackLayoutProps {
   filtered: ProjectT[];
@@ -22,18 +22,18 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
       rotation: Math.random() * 12 - 6,
     }));
     setCards(newCards);
-    // 0부터 newCards.length-1 까지
     setDeck(newCards.map((_, i) => i));
+    setAction(null);
   }, [filtered]);
 
-  if (deck.length === 0 || filtered.length === 0) {
-    return null;
+  const isLoading = deck.length === 0 || filtered.length === 0 || deck.length !== filtered.length;
+  if (isLoading) {
+    return <StackSkeleton />;
   }
 
   const frontIdx = deck[deck.length - 1];
   const backCards = deck.slice(0, -1);
 
-  // deck 순환 및 action 초기화
   const cycle = (dir: 'next' | 'prev') => {
     setDeck(d =>
       dir === 'next' ? [...d.slice(1), d[0]] : [d[d.length - 1], ...d.slice(0, d.length - 1)]
@@ -68,8 +68,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
           </button>
         </div>
 
-        {/* 카드 정보 */}
-        <div className="flex max-w-96 flex-col justify-center gap-4">
+        <div className="flex max-w-[320px] flex-col justify-center gap-4">
           <div className="flex justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
               {filtered[frontIdx].category.map(cat => (
@@ -82,14 +81,9 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
               ))}
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <motion.button
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="inline-block cursor-pointer rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-600"
-              >
-                자세히 보기
-              </motion.button>
+              <IconButton>
+                <AiOutlineSearch size={25} />
+              </IconButton>
               <IconButton href={filtered[frontIdx].github}>
                 <AiFillGithub size={25} />
               </IconButton>
