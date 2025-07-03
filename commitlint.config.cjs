@@ -21,6 +21,7 @@ module.exports = {
         'rename',
         'build',
         'ci',
+        'design',
       ],
     ],
   },
