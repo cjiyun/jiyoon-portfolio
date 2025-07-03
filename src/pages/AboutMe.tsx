@@ -1,14 +1,14 @@
 import type { ReactElement } from 'react';
 import { AiFillGithub, AiOutlineMail } from 'react-icons/ai';
 import SectionHeader from '@/components/main/SectionHeader';
-import { IconButton } from '@/components/aboutme/IconButton';
+import { IconButton } from '@/components/common/IconButton';
 import Vision from '@/components/aboutme/Vision';
 
 const AboutMe = (): ReactElement => {
   return (
     <div className="relative flex h-screen w-full flex-col">
       <SectionHeader title="About Me" />
-      <div className="absolute top-[154px] flex h-[calc(100%-154px)] items-center justify-between gap-[10%] py-10 lg:top-[100px]">
+      <div className="absolute top-[138px] flex h-[calc(100%-138px)] items-center justify-between gap-[10%] pt-6 pb-14 lg:top-[100px]">
         <div className="relative hidden h-full w-1/2 py-10 xl:flex">
           <div className="border-bluePrimary absolute h-[calc(100%-120px)] w-[calc(100%-40px)] rounded-md border-2"></div>
           <img

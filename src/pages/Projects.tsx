@@ -27,13 +27,13 @@ const projects: ProjectT[] = [
 ];
 
 const MODES = [
-  { mode: 'carousel' as const, label: '모아보기' },
+  { mode: 'stack' as const, label: '모아보기' },
   { mode: 'grid' as const, label: '펼쳐보기' },
 ];
 
 const Projects = (): ReactElement => {
   const [filters, setFilters] = useState<Filter>('All');
-  const [viewMode, setViewMode] = useState<'grid' | 'carousel'>('carousel');
+  const [viewMode, setViewMode] = useState<'grid' | 'stack'>('stack');
 
   // 카테고리별 필터링
   const filtered = projects.filter(p => {
@@ -76,7 +76,7 @@ const Projects = (): ReactElement => {
           ))}
         </div>
 
-        {viewMode === 'carousel' && <CardStackLayout filtered={filtered} />}
+        {viewMode === 'stack' && <CardStackLayout filtered={filtered} />}
 
         {viewMode === 'grid' && (
           <div className="overflow-x-hidden overflow-y-auto sm:overflow-visible">

@@ -14,7 +14,7 @@ const Skills = (): ReactElement => {
   return (
     <div className="relative flex h-screen w-full flex-col gap-10">
       <SectionHeader title="Skills" />
-      <div className="bg-bg box-shadow absolute top-[154px] my-10 mb-20 flex h-[calc(100%-234px)] w-full flex-col gap-10 rounded-lg p-10 lg:top-[100px]">
+      <div className="bg-bg box-shadow absolute top-[138px] my-6 flex h-[calc(100%-202px)] w-full flex-col gap-10 rounded-lg p-10 lg:top-[100px]">
         <div className="grid-auto-fill-25 h-10 text-xl font-bold text-black">
           <button className="bg-bluePrimary cursor-pointer rounded-xl">All</button>
           <button className="cursor-pointer">FrontEnd</button>
