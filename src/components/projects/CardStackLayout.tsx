@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AiFillGithub } from 'react-icons/ai';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import type { ProjectT, ProjectRotation } from '@/types/type';
 import { IconButton } from '@/components/common/IconButton';
 import StackCardItem from '@/components/projects/StackCardItem';
-import { buttonVariants } from '@/animations/variants';
+import { buttonVariants, cardStackVariants } from '@/animations/variants';
 
 interface CardStackLayoutProps {
   filtered: ProjectT[];
@@ -28,38 +28,10 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
 
   if (deck.length === 0) {
     return null;
-    // 또는 <div>로딩중…</div> 같은 플레이스홀더를 띄워도 좋습니다.
   }
 
   const frontIdx = deck[deck.length - 1];
   const backCards = deck.slice(0, -1);
-
-  const variants: Variants = {
-    initial: { x: 0, y: 0, opacity: 1, rotate: 0 },
-    exitNext: {
-      x: 200,
-      y: -200,
-      rotate: 45,
-      opacity: [1, 0.95, 0],
-      transition: {
-        type: 'spring',
-        stiffness: 250,
-        damping: 25,
-      },
-    },
-    enterPrev: { x: 240, y: -300, opacity: 0, rotate: 45 },
-    animatePrev: {
-      x: 0,
-      y: 0,
-      rotate: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 25,
-      },
-    },
-  };
 
   // deck 순환 및 action 초기화
   const cycle = (dir: 'next' | 'prev') => {
@@ -87,7 +59,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
                 isBackmost={idx === backCards[0]}
                 action={action}
                 backCount={backCards.length}
-                variants={variants}
+                variants={cardStackVariants}
                 cycle={cycle}
               />
             ))}
