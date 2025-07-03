@@ -44,8 +44,8 @@
     'GRAD' 0,
     'opsz' 40;
 }
-.material-symbols-outlined.hover-fill:hover,
 .material-symbols-outlined.is-active {
+  font-size: 58px;
   color: var(--color-bluePrimary);
   font-variation-settings:
     'FILL' 1,

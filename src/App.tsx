@@ -18,7 +18,7 @@ function App() {
       <Sidebar theme={theme} onToggleTheme={toggleTheme} />
       <div className="relative">
         <Thumbnail />
-        <div className="bg-white">
+        <div className="bg-white px-[5%] lg:px-[15%] lg:pr-[calc(20%+60px)]">
           <section id="aboutme" data-index="0" className="scroll-section">
             <AboutMe />
           </section>
