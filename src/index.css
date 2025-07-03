@@ -2,16 +2,13 @@
 @theme {
   --color-bg: #dcf5ff;
   --color-bluePrimary: #0073a1;
+  --color-blueDark: #105078;
 
   --shadow-box: 0 6px 8px rgba(0, 0, 0, 0.25);
 
   --aspect-card: 3/4;
 }
 @layer utilities {
-  .grid-auto-fill-25 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  }
   .grid-auto-fill-90 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
@@ -21,7 +18,7 @@
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   }
   .skills-item {
-    @apply flex aspect-square w-full items-center justify-center rounded-lg bg-white drop-shadow-lg;
+    @apply flex aspect-square items-center justify-center rounded-lg bg-white drop-shadow-lg;
   }
   .box-shadow {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
