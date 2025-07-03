@@ -54,7 +54,7 @@ const Sidebar = ({ theme, onToggleTheme }: SidebarProps): ReactElement => {
 
   return (
     <>
-      <div className="bg-bg70 fixed z-[999] flex h-[60px] w-screen flex-row items-center justify-between lg:right-[5%] lg:h-screen lg:w-[60px] lg:flex-col lg:bg-transparent">
+      <div className="bg-bg/70 fixed z-[999] flex h-[60px] w-screen flex-row items-center justify-between lg:right-10 lg:h-screen lg:w-[60px] lg:flex-col lg:bg-transparent">
         <AnimatePresence mode="wait">
           <div className="absolute left-[5%] z-[10] flex h-[60px] items-center lg:top-10 lg:left-auto">
             <motion.span
@@ -96,7 +96,7 @@ const Sidebar = ({ theme, onToggleTheme }: SidebarProps): ReactElement => {
           )}
         </AnimatePresence>
       </div>
-      <div className="fixed right-[5%] bottom-[5%] z-[999] flex w-[60px] items-center justify-center">
+      <div className="fixed right-10 bottom-[5%] z-[999] flex w-[60px] items-center justify-center">
         <AnimatePresence>
           {activeMenu !== -1 && (
             <motion.span
@@ -106,7 +106,7 @@ const Sidebar = ({ theme, onToggleTheme }: SidebarProps): ReactElement => {
               exit="exit"
               transition={{ duration: 0.5, ease: 'easeInOut' }}
               style={{ transformOrigin: 'center' }}
-              className="material-symbols-outlined cursor-pointer"
+              className="material-symbols-outlined hover-fill cursor-pointer"
               onClick={scrollToTop}
             >
               expand_circle_up
