@@ -5,6 +5,8 @@
   --color-bg: #dcf5ff;
   --color-bluePrimary: #0073a1;
   --color-blueDark: #105078;
+  --color-gray100: #ddddddff;
+  --color-gray200: #979797ff;
 
   --shadow-box: 0 6px 8px rgba(0, 0, 0, 0.25);
 
@@ -25,7 +27,24 @@
   .box-shadow {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
   }
+  .animate-skeleton {
+    border-radius: 6px;
+    background: linear-gradient(
+      to right,
+      var(--color-gray200) 0%,
+      var(--color-gray100) 50%,
+      var(--color-gray200) 100%
+    );
+    background-size: 200% 100%;
+    animation: 1.7s skeletonGradientWave linear infinite;
+  }
 }
+@keyframes skeletonGradientWave {
+  to {
+    background-position-x: -200%;
+  }
+}
+
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined', sans-serif;
   font-style: normal;
