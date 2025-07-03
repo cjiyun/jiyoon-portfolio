@@ -53,20 +53,20 @@ const GridCardItem = ({ project }: GridCardItemProps): ReactElement | null => {
         >
           <div className="flex flex-col gap-6">
             <div className="space-y-2">
-              <h3 className="line-clamp-2 text-xl leading-tight font-bold">{project.title}</h3>
-              <p className="text-gray-900">{project.description}</p>
+              <h3 className="line-clamp-2 text-lg leading-tight font-bold">{project.title}</h3>
+              <p className="text-sm text-gray-900">{project.description}</p>
             </div>
-            <div className="grid-auto-fit-110 grid w-full justify-items-center gap-2 self-center text-sm">
+            <div className="grid-auto-fit-110 grid w-full gap-2 text-xs">
               <motion.button
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-full border border-gray-600 px-3 py-1"
+                className="flex h-8 w-full cursor-pointer items-center justify-center gap-1 truncate rounded-full border border-gray-600 px-3 py-1"
               >
                 <AiOutlineSearch size={20} />
                 <span>자세히 보기</span>
               </motion.button>
-              <LinkButton href={href} className="h-full justify-center gap-1 px-3 py-1">
+              <LinkButton href={href} className="flex h-full justify-center gap-1 px-3 py-1">
                 <Icon size={20} />
                 <span>{label}</span>
               </LinkButton>

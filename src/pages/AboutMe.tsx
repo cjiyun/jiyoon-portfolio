@@ -9,12 +9,12 @@ const AboutMe = (): ReactElement => {
     <div className="relative flex h-screen w-full flex-col">
       <SectionHeader title="About Me" />
       <div className="absolute top-[138px] flex h-[calc(100%-138px)] items-center justify-between gap-[10%] py-12 lg:top-[100px]">
-        <div className="relative hidden h-full w-1/2 py-[30px] xl:flex">
-          <div className="border-bluePrimary absolute h-[calc(100%-60px)] w-[calc(100%-40px)] rounded-md border-2"></div>
+        <div className="aspect-card relative hidden h-full items-center xl:flex">
+          <div className="border-bluePrimary absolute h-[calc(100%-40px)] w-[calc(100%-30px)] rounded-md border-2"></div>
           <img
             src="/images/aboutme-profile.png"
             alt="profile-image"
-            className="absolute top-[60px] left-[30px] h-[calc(100%-60px)] w-[calc(100%-40px)] justify-end rounded-md object-cover"
+            className="absolute top-[40px] left-[20px] h-[calc(100%-40px)] w-[calc(100%-30px)] rounded-md object-cover"
           />
         </div>
         <div className="bg-bg shadow-box h-fit min-h-full w-full space-y-5 rounded-lg p-10 xl:w-1/2 xl:space-y-5">
