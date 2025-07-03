@@ -9,10 +9,6 @@
   --aspect-card: 3/4;
 }
 @layer utilities {
-  .grid-auto-fill-25 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  }
   .grid-auto-fill-90 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
