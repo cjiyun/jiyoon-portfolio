@@ -76,10 +76,8 @@ const Projects = (): ReactElement => {
           ))}
         </div>
 
-        {/* ——— 모아보기 (Carousel) ——— */}
         {viewMode === 'carousel' && <CardStackLayout filtered={filtered} />}
 
-        {/* — 펼쳐보기: 그리드 레이아웃 — */}
         {viewMode === 'grid' && (
           <div className="overflow-x-hidden overflow-y-auto sm:overflow-visible">
             <CardGridLayout filtered={filtered} />
