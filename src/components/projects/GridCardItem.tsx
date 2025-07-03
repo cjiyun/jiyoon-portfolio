@@ -35,7 +35,7 @@ const GridCardItem = ({ project }: GridCardItemProps): ReactElement | null => {
               {project.category.map(cat => (
                 <span
                   key={cat}
-                  className="bg-bluePrimary inline-block rounded-lg px-2.5 py-0.5 text-center text-sm text-white"
+                  className="bg-bluePrimary inline-block rounded-lg px-2.5 py-0.5 text-center text-xs text-white"
                 >
                   {cat}
                 </span>
@@ -56,7 +56,7 @@ const GridCardItem = ({ project }: GridCardItemProps): ReactElement | null => {
               <h3 className="line-clamp-2 text-xl leading-tight font-bold">{project.title}</h3>
               <p className="text-gray-900">{project.description}</p>
             </div>
-            <div className="grid-auto-fit-110 grid w-full justify-items-center gap-2 self-center">
+            <div className="grid-auto-fit-110 grid w-full justify-items-center gap-2 self-center text-sm">
               <motion.button
                 variants={buttonVariants}
                 whileHover="hover"

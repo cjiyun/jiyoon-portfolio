@@ -36,13 +36,13 @@ const Skills = (): ReactElement => {
             <button
               key={cat}
               onClick={() => setSelected(cat)}
-              className={`hover:text-bluePrimary cursor-pointer rounded-xl transition-all duration-300 ${selected === cat ? 'bg-bluePrimary flex-[2] !text-white' : 'flex-1 bg-transparent text-gray-700'} `}
+              className={`hover:text-bluePrimary cursor-pointer rounded-xl py-2 transition-all duration-300 ${selected === cat ? 'bg-bluePrimary flex-[2] !text-white' : 'flex-1 bg-transparent text-gray-700'} `}
             >
               {cat}
             </button>
           ))}
         </div>
-        <div className="grid w-full grid-cols-3 justify-items-center gap-10 sm:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+        <div className="grid w-full grid-cols-4 justify-items-center gap-10 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
           {SKILLS.map(skill => (
             <SkillItem key={skill.alt} skill={skill} selected={selected} />
           ))}
