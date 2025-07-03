@@ -26,7 +26,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
     setDeck(newCards.map((_, i) => i));
   }, [filtered]);
 
-  if (deck.length === 0) {
+  if (deck.length === 0 || filtered.length === 0) {
     return null;
   }
 
@@ -48,8 +48,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
           <button onClick={() => setAction('prev')} className="cursor-pointer">
             <IoIosArrowBack size={36} />
           </button>
-          <div className="aspect-card h-[440px]" style={{ perspective: 800 }}>
-            {/* 스택 뒤 카드들 */}
+          <div className="aspect-card h-[300px]" style={{ perspective: 800 }}>
             {deck.map((idx, i) => (
               <StackCardItem
                 key={cards[idx].id}
@@ -70,13 +69,13 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
         </div>
 
         {/* 카드 정보 */}
-        <div className="flex w-[400px] flex-col justify-center gap-4">
+        <div className="flex w-[250px] flex-col justify-center gap-4">
           <div className="flex justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
               {filtered[frontIdx].category.map(cat => (
                 <span
                   key={cat}
-                  className="bg-bluePrimary inline-block rounded-full px-3 py-1 text-sm text-white"
+                  className="bg-bluePrimary inline-block rounded-full px-3 py-1 text-xs text-white"
                 >
                   {cat}
                 </span>
@@ -87,7 +86,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="inline-block cursor-pointer rounded-full border border-gray-300 px-3 py-1 text-sm text-gray-600"
+                className="inline-block cursor-pointer rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-600"
               >
                 자세히 보기
               </motion.button>
@@ -97,8 +96,8 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-bold">{filtered[frontIdx].title}</h3>
-            <p className="break-keep text-gray-900">{filtered[frontIdx].description}</p>
+            <h3 className="text-lg font-bold">{filtered[frontIdx].title}</h3>
+            <p className="text-sm break-keep text-gray-900">{filtered[frontIdx].description}</p>
           </div>
         </div>
       </div>
