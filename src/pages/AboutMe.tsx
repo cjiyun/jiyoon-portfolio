@@ -6,20 +6,20 @@ import Vision from '@/components/aboutme/Vision';
 
 const AboutMe = (): ReactElement => {
   return (
-    <div className="relative flex h-screen w-full flex-col">
+    <div className="flex w-full flex-col">
       <SectionHeader title="About Me" />
-      <div className="absolute top-[138px] flex h-[calc(100%-138px)] items-center justify-between gap-[10%] py-12 lg:top-[100px]">
-        <div className="aspect-card relative hidden h-full items-center xl:flex">
-          <div className="border-bluePrimary absolute h-[calc(100%-40px)] w-[calc(100%-30px)] rounded-md border-2"></div>
+      <div className="flex items-center justify-between py-12">
+        <div className="aspect-card relative hidden max-h-[70vh] w-[40%] lg:flex xl:w-[30%]">
+          <div className="border-bluePrimary absolute h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-md border-2"></div>
           <img
             src="/images/aboutme-profile.png"
             alt="profile-image"
-            className="absolute top-[40px] left-[20px] h-[calc(100%-40px)] w-[calc(100%-30px)] rounded-md object-cover"
+            className="absolute top-[20px] left-[20px] h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-md object-cover"
           />
         </div>
-        <div className="bg-bg shadow-box h-fit min-h-full w-full space-y-5 rounded-lg p-10 xl:w-1/2 xl:space-y-5">
+        <div className="bg-bg shadow-box h-fit min-h-[70vh] w-full space-y-6 rounded-lg p-10 md:px-15 lg:w-1/2 lg:p-10 xl:w-[60%]">
           <div className="flex items-center gap-5">
-            <div className="h-24 w-24 overflow-hidden rounded-lg xl:hidden">
+            <div className="h-24 w-24 overflow-hidden rounded-lg lg:hidden">
               <img
                 src="/images/aboutme-profile.png"
                 alt="profile-image"
