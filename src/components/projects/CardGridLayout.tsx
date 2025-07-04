@@ -8,7 +8,7 @@ interface CardGridLayoutProps {
 
 const CardGridLayout = ({ filtered }: CardGridLayoutProps): ReactElement => {
   return (
-    <div className="grid h-full w-full grid-cols-1 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3 2xl:grid-cols-4">
+    <div className="grid h-full w-full grid-cols-1 gap-15 px-8 py-15 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {filtered.map(project => (
         <GridCardItem key={project.id} project={project} />
       ))}

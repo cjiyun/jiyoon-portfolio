@@ -16,7 +16,7 @@ export const LinkButton = ({ href, children, className = '' }: LinkButtonProps) 
     variants={buttonVariants}
     whileHover="hover"
     whileTap="tap"
-    transition={{ duration: 0.3, ease: 'easeInOut' }}
+    transition={{ duration: 0.2 }}
     className={`flex w-full cursor-pointer items-center rounded-full border border-gray-600 ${className}`}
   >
     {children}

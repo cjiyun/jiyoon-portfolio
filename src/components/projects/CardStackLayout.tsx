@@ -42,7 +42,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
   };
 
   return (
-    <div className="px-8">
+    <div className="px-8 pt-15">
       <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-6">
         <div className="flex w-full items-center justify-between">
           <button onClick={() => setAction('prev')} className="cursor-pointer">
