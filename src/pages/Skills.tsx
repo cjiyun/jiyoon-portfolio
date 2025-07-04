@@ -28,15 +28,15 @@ const Skills = (): ReactElement => {
   const [selected, setSelected] = useState<SkillsCategory>('All');
 
   return (
-    <div className="relative flex h-screen w-full flex-col gap-10">
+    <div className="flex w-full flex-col">
       <SectionHeader title="Skills" />
-      <div className="bg-bg box-shadow absolute top-[138px] my-6 flex h-[calc(100%-202px)] w-full flex-col gap-10 rounded-lg p-5 sm:p-8 lg:top-[100px]">
+      <div className="bg-bg box-shadow my-12 flex h-fit min-h-[70vh] w-full flex-col gap-10 rounded-lg p-5 sm:p-8">
         <div className="flex h-10 w-full items-center gap-2 text-xl font-bold text-black">
           {skillsCategories.map(cat => (
             <button
               key={cat}
               onClick={() => setSelected(cat)}
-              className={`hover:text-bluePrimary cursor-pointer rounded-xl py-1 transition-all duration-300 ${selected === cat ? 'bg-bluePrimary flex-[2] !text-white' : 'flex-1 bg-transparent text-gray-700'} `}
+              className={`hover:text-bluePrimary cursor-pointer rounded-xl py-1 transition-all duration-500 ease-in-out ${selected === cat ? 'bg-bluePrimary flex-[2] !text-white' : 'flex-1 bg-transparent text-gray-700'} `}
             >
               {cat}
             </button>

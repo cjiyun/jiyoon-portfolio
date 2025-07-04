@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react';
+import { motion } from 'framer-motion';
 
 interface SectionHeaderProps {
   title: string;
@@ -6,11 +7,15 @@ interface SectionHeaderProps {
 
 const SectionHeader = ({ title }: SectionHeaderProps): ReactElement => {
   return (
-    <div className="absolute flex h-fit w-full items-center gap-5 truncate pt-20 lg:pt-10">
-      <div className="flex h-[60px] items-center">
-        <h2 className="text-2xl font-bold">{title}</h2>
-      </div>
-      <div className="h-0.5 w-full bg-black"></div>
+    <div className="flex w-full items-center gap-5 truncate pt-25 lg:pt-10">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <motion.div
+        className="h-[1px] w-full origin-left border border-black bg-black"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      />
     </div>
   );
 };
