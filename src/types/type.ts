@@ -7,7 +7,7 @@ export type ProjectT = {
   description: string;
   category: ProjectsCategory[];
   image: string;
-  github?: string;
+  github: string;
 };
 
 export interface ProjectRotation extends ProjectT {
