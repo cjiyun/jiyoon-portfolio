@@ -19,12 +19,12 @@ const Thumbnail = (): ReactElement => {
         className="flex h-screen w-full items-center justify-center px-[10%]"
       >
         <div className="text-bluePrimary">
-          <p className="pl-2 text-sm lg:text-lg">2025.06.17</p>
-          <div className="text-6xl font-black md:text-7xl lg:text-8xl">
+          <p className="text-bluePrimary/60 pl-2 text-sm lg:text-lg">2025.07.05</p>
+          <div className="text-5xl font-black sm:text-6xl md:text-7xl lg:text-8xl">
             <p>FRONTEND</p>
             <p>DEVELOPER</p>
           </div>
-          <div className="nowrap-ellipsis w-full pt-3 pl-1 text-[16px] md:text-xl lg:text-2xl">
+          <div className="w-full pt-3 pl-1 text-sm break-keep md:text-lg lg:text-2xl">
             <p>
               저는 <span className="font-bold">도전</span>과 <span className="font-bold">성장</span>
               을 좋아하는 <span className="font-bold">끈기</span>있는 개발자입니다.
