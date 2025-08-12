@@ -13,14 +13,14 @@ const projects: ProjectT[] = [
     title: 'EasyPlace - 쉽게 갈 수 있는 장소',
     description:
       '교통약자가 안심하고 방문할 수 있도록, 핫플레이스의 교통약자 편의시설 정보를 제공하는 서비스',
-    category: ['팀', 'FE'],
+    category: ['팀', 'FE', '웹앱'],
     image: '/images/easyplace_mock.png',
   },
   {
     id: 2,
     title: '포트폴리오 사이트',
     description: '프론트엔드 개발자 최지윤을 소개하는 나만의 포트폴리오 사이트',
-    category: ['개인', 'FE', '디자인', '기획'],
+    category: ['개인', 'FE', '디자인', '웹'],
     image: '/images/portfolio_mock.png',
     github: 'https://github.com/cjiyun/jiyoon-portfolio',
   },
@@ -47,33 +47,37 @@ const Projects = (): ReactElement => {
     <div className="flex w-full flex-col">
       <SectionHeader title="Projects" />
       <div className="my-12 space-y-6">
-        <div className="space-y-2.5 space-x-2.5 text-sm">
-          {MODES.map(({ mode, label }) => (
-            <button
-              key={mode}
-              onClick={() => setViewMode(mode)}
-              className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
-                viewMode === mode
-                  ? 'bg-bluePrimary border-bluePrimary text-white'
-                  : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
-              } `}
-            >
-              {label}
-            </button>
-          ))}
-          {FILTERS.map(filter => (
-            <button
-              key={filter}
-              onClick={() => setFilters(filter)}
-              className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
-                filters === filter
-                  ? 'bg-bluePrimary border-bluePrimary text-white'
-                  : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
-              } `}
-            >
-              {filter}
-            </button>
-          ))}
+        <div className="flex flex-wrap gap-2.5 text-sm">
+          <div className="space-x-2.5">
+            {MODES.map(({ mode, label }) => (
+              <button
+                key={mode}
+                onClick={() => setViewMode(mode)}
+                className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
+                  viewMode === mode
+                    ? 'bg-bluePrimary border-bluePrimary text-white'
+                    : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
+                } `}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="space-x-2.5">
+            {FILTERS.map(filter => (
+              <button
+                key={filter}
+                onClick={() => setFilters(filter)}
+                className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
+                  filters === filter
+                    ? 'bg-bluePrimary border-bluePrimary text-white'
+                    : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
+                } `}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="bg-bg box-shadow flex w-full flex-col gap-6 rounded-lg p-10 lg:gap-8">
           {viewMode === 'stack' && <CardStackLayout filtered={filtered} />}

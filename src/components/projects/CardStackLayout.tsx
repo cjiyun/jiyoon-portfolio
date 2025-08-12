@@ -47,7 +47,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
         <button onClick={() => setAction('prev')} className="cursor-pointer">
           <IoIosArrowBack size={36} />
         </button>
-        <div className="aspect-card h-[300px]" style={{ perspective: 800 }}>
+        <div className="aspect-card h-[240px] sm:h-[300px]" style={{ perspective: 800 }}>
           {deck.map((idx, i) => (
             <StackCardItem
               key={cards[idx].id}
@@ -79,7 +79,7 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex gap-2">
             <IconButton>
               <AiOutlineSearch size={25} />
             </IconButton>
