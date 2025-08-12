@@ -56,7 +56,7 @@ const Projects = (): ReactElement => {
               <button
                 key={mode}
                 onClick={() => setViewMode(mode)}
-                className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
+                className={`cursor-pointer rounded-full border px-4 py-1 font-medium transition-colors duration-300 ${
                   viewMode === mode
                     ? 'bg-bluePrimary border-bluePrimary text-white'
                     : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
@@ -74,7 +74,7 @@ const Projects = (): ReactElement => {
                 className={`cursor-pointer rounded-full border px-4 py-1 font-medium transition-colors duration-300 ${
                   filters === filter
                     ? 'bg-bluePrimary border-bluePrimary text-white'
-                    : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-500 text-gray-600'
+                    : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
                 } `}
               >
                 {filter}
