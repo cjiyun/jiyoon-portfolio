@@ -5,12 +5,14 @@ import type { ReactNode } from 'react';
 interface IconButtonProps {
   children: ReactNode;
   href?: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   variants?: Variants;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,
   href,
+  onClick,
   variants = iconVariants,
 }) => (
   <motion.a
@@ -20,7 +22,8 @@ export const IconButton: React.FC<IconButtonProps> = ({
     variants={variants}
     whileHover="hover"
     whileTap="tap"
-    transition={{ duration: 0.3, ease: 'easeInOut' }}
+    transition={{ duration: 0.3 }}
+    onClick={onClick}
     className="cursor-pointer"
   >
     {children}
