@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 @theme {
-  --breakpoint-xs: 20rem;
-
   --color-bg: #dcf5ff;
   --color-bluePrimary: #0073a1;
   --color-blueDark: #105078;
@@ -13,13 +11,9 @@
   --aspect-card: 3/4;
 }
 @layer utilities {
-  .grid-auto-fill-90 {
+  .grid-auto-fit-120 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  }
-  .grid-auto-fit-110 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
   .skills-item {
     @apply flex aspect-square items-center justify-center rounded-lg bg-white drop-shadow-lg;
