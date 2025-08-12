@@ -14,7 +14,7 @@ const projects: ProjectT[] = [
     title: 'EasyPlace - 쉽게 갈 수 있는 장소',
     description:
       '교통약자가 안심하고 방문할 수 있도록, 핫플레이스의 교통약자 편의시설 정보를 제공하는 서비스',
-    category: ['팀', 'FE'],
+    category: ['팀', 'FE', '웹앱'],
     image: '/images/easyplace_mock.png',
     github: 'https://github.com/G10wth/G10wth_FE',
   },
@@ -23,7 +23,7 @@ const projects: ProjectT[] = [
     name: 'jiyoon-portfolio',
     title: '포트폴리오 사이트',
     description: '프론트엔드 개발자 최지윤을 소개하는 나만의 포트폴리오 사이트',
-    category: ['개인', 'FE', '디자인', '기획'],
+    category: ['개인', 'FE', '디자인', '웹'],
     image: '/images/portfolio_mock.png',
     github: 'https://github.com/cjiyun/jiyoon-portfolio',
   },
@@ -50,21 +50,23 @@ const Projects = (): ReactElement => {
     <div className="flex w-full flex-col">
       <SectionHeader title="Projects" />
       <div className="my-12 space-y-6">
-        <div className="space-y-2.5 space-x-2.5 text-sm">
-          {MODES.map(({ mode, label }) => (
-            <button
-              key={mode}
-              onClick={() => setViewMode(mode)}
-              className={`cursor-pointer rounded-full border px-4 py-1 font-medium transition-colors duration-300 ${
-                viewMode === mode
-                  ? 'bg-bluePrimary border-bluePrimary text-white'
-                  : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-500 text-gray-600'
-              } `}
-            >
-              {label}
-            </button>
-          ))}
-          <div className="inline-flex gap-2.5 whitespace-nowrap">
+        <div className="flex flex-wrap gap-2.5 text-sm">
+          <div className="space-x-2.5">
+            {MODES.map(({ mode, label }) => (
+              <button
+                key={mode}
+                onClick={() => setViewMode(mode)}
+                className={`cursor-pointer rounded-full border px-4 py-1 font-medium ${
+                  viewMode === mode
+                    ? 'bg-bluePrimary border-bluePrimary text-white'
+                    : 'hover:border-bluePrimary hover:text-bluePrimary border-gray-300 text-gray-600'
+                } `}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="space-x-2.5">
             {FILTERS.map(filter => (
               <button
                 key={filter}

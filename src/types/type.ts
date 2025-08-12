@@ -1,4 +1,4 @@
-type ProjectsCategory = '팀' | '개인' | 'FE' | 'BE' | '디자인' | '기획';
+type ProjectsCategory = '팀' | '개인' | 'FE' | 'BE' | '디자인' | '기획' | '웹' | '앱' | '웹앱';
 
 export type ProjectT = {
   id: number;
