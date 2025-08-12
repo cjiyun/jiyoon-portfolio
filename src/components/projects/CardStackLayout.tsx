@@ -42,57 +42,55 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
   };
 
   return (
-    <div className="px-8">
-      <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-6">
-        <div className="flex w-full items-center justify-between">
-          <button onClick={() => setAction('prev')} className="cursor-pointer">
-            <IoIosArrowBack size={36} />
-          </button>
-          <div className="aspect-card h-[300px]" style={{ perspective: 800 }}>
-            {deck.map((idx, i) => (
-              <StackCardItem
-                key={cards[idx].id}
-                card={cards[idx]}
-                index={i}
-                isFront={idx === frontIdx}
-                isBackmost={idx === backCards[0]}
-                action={action}
-                backCount={backCards.length}
-                variants={cardStackVariants}
-                cycle={cycle}
-              />
+    <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-6">
+      <div className="flex w-full items-center justify-between">
+        <button onClick={() => setAction('prev')} className="cursor-pointer">
+          <IoIosArrowBack size={36} />
+        </button>
+        <div className="aspect-card h-[300px]" style={{ perspective: 800 }}>
+          {deck.map((idx, i) => (
+            <StackCardItem
+              key={cards[idx].id}
+              card={cards[idx]}
+              index={i}
+              isFront={idx === frontIdx}
+              isBackmost={idx === backCards[0]}
+              action={action}
+              backCount={backCards.length}
+              variants={cardStackVariants}
+              cycle={cycle}
+            />
+          ))}
+        </div>
+        <button onClick={() => setAction('next')} className="cursor-pointer">
+          <IoIosArrowForward size={36} />
+        </button>
+      </div>
+
+      <div className="flex max-w-[320px] flex-col justify-center gap-4">
+        <div className="flex justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            {filtered[frontIdx].category.map(cat => (
+              <span
+                key={cat}
+                className="bg-bluePrimary inline-block rounded-full px-3 py-1 text-xs text-white"
+              >
+                {cat}
+              </span>
             ))}
           </div>
-          <button onClick={() => setAction('next')} className="cursor-pointer">
-            <IoIosArrowForward size={36} />
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <IconButton>
+              <AiOutlineSearch size={25} />
+            </IconButton>
+            <IconButton href={filtered[frontIdx].github}>
+              <AiFillGithub size={25} />
+            </IconButton>
+          </div>
         </div>
-
-        <div className="flex max-w-[320px] flex-col justify-center gap-4">
-          <div className="flex justify-between gap-2">
-            <div className="flex flex-wrap items-center gap-2">
-              {filtered[frontIdx].category.map(cat => (
-                <span
-                  key={cat}
-                  className="bg-bluePrimary inline-block rounded-full px-3 py-1 text-xs text-white"
-                >
-                  {cat}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <IconButton>
-                <AiOutlineSearch size={25} />
-              </IconButton>
-              <IconButton href={filtered[frontIdx].github}>
-                <AiFillGithub size={25} />
-              </IconButton>
-            </div>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-lg font-bold">{filtered[frontIdx].title}</h3>
-            <p className="text-sm break-keep text-gray-900">{filtered[frontIdx].description}</p>
-          </div>
+        <div className="space-y-2">
+          <h3 className="text-lg font-bold">{filtered[frontIdx].title}</h3>
+          <p className="text-sm break-keep text-gray-900">{filtered[frontIdx].description}</p>
         </div>
       </div>
     </div>
