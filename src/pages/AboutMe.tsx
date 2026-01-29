@@ -1,13 +1,11 @@
 import type { ReactElement } from 'react';
 import { AiFillGithub, AiOutlineMail } from 'react-icons/ai';
-import SectionHeader from '@/components/main/SectionHeader';
 import { IconButton } from '@/components/common/IconButton';
 import Vision from '@/components/aboutme/Vision';
 
 const AboutMe = (): ReactElement => {
   return (
     <div className="flex w-full flex-col">
-      <SectionHeader title="About Me" />
       <div className="flex items-center justify-between py-12">
         <div className="aspect-card relative hidden max-h-[70vh] w-[40%] lg:flex xl:w-[30%]">
           <div className="border-bluePrimary absolute h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-md border-2"></div>

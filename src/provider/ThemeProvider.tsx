@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
-import { lightTheme, darkTheme } from '@/styles/theme';
-import { useThemeMode } from '@/hooks/useThemeMode'; // 프로젝트에 있는 훅으로 교체
+import { themes } from '@/styles/theme';
+import { useThemeMode } from '@/hooks/useThemeMode';
 
 interface ThemeProviderProps {
   children: React.ReactNode;
@@ -9,8 +9,5 @@ interface ThemeProviderProps {
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const { mode } = useThemeMode();
-
-  const appliedTheme = mode === 'dark' ? darkTheme : lightTheme;
-
-  return <EmotionThemeProvider theme={appliedTheme}>{children}</EmotionThemeProvider>;
+  return <EmotionThemeProvider theme={themes[mode]}>{children}</EmotionThemeProvider>;
 };
