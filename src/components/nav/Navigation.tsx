@@ -1,6 +1,6 @@
 import { useNavigation } from '@/hooks/useNavigation';
-import HeaderNav from '@/components/main/HeaderNav';
-import DrawerNav from '@/components/main/DrawerNav';
+import HeaderNav from '@/components/nav/HeaderNav';
+import DrawerNav from '@/components/nav/DrawerNav';
 
 interface NavigationProps {
   onToggleTheme: () => void;

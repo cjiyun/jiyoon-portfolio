@@ -1,6 +1,5 @@
 import { type ReactElement, useState } from 'react';
 import { type Skill, type SkillsCategory, skillsCategories } from '@/types/type';
-import SectionHeader from '@/components/main/SectionHeader';
 import SkillItem from '@/components/skills/SkillItem';
 import react from '@/assets/images/reactIcon.svg';
 import html from '@/assets/images/htmlIcon.svg';
@@ -29,7 +28,6 @@ const Skills = (): ReactElement => {
 
   return (
     <div className="flex w-full flex-col">
-      <SectionHeader title="Skills" />
       <div className="bg-bg box-shadow my-12 flex h-fit min-h-[70vh] w-full flex-col gap-10 rounded-lg p-5 sm:p-8">
         <div className="flex h-10 w-full items-center gap-2 text-xl font-bold text-black">
           {skillsCategories.map(cat => (

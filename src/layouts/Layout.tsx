@@ -1,6 +1,6 @@
 import { useThemeMode } from '@/hooks/useThemeMode';
 import { PortfolioSections } from '@/pages/PortfolioSections';
-import Navigation from '@/components/main/Navigation';
+import Navigation from '@/components/nav/Navigation';
 
 export const Layout = () => {
   const { toggleMode } = useThemeMode();

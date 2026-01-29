@@ -1,12 +1,10 @@
 import type { ReactElement } from 'react';
-import SectionHeader from '@/components/main/SectionHeader';
 import { buttons } from '@/constants/buttons';
 import { LinkButton } from '@/components/common/LinkButton';
 
 const Contact = (): ReactElement => {
   return (
     <div className="flex w-full flex-col pb-10">
-      <SectionHeader title="Contact" />
       <div className="bg-bg box-shadow my-12 flex w-full flex-col items-center gap-10 rounded-lg p-15">
         <div className="space-y-5 text-center">
           <h2 className="text-bluePrimary text-xl font-bold">봐주셔서 감사합니다!</h2>

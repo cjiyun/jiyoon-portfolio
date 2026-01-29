@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { RefObject } from 'react';
-import { S } from '@/components/main';
+import { S } from '@/components/nav';
 import { useDrawerNavEffects } from '@/hooks/useDrawerNavEffects';
 import { useThemeMode } from '@/hooks/useThemeMode';
 import { themes } from '@/styles/theme';

@@ -3,7 +3,7 @@ import { type RefObject } from 'react';
 import { motion, LayoutGroup } from 'framer-motion';
 import { type SectionId } from '@/pages/sections';
 import { buttonVariants } from '@/animations/variants';
-import { S } from '@/components/main';
+import { S } from '@/components/nav';
 import { useThemeMode } from '@/hooks/useThemeMode';
 import { themes } from '@/styles/theme';
 

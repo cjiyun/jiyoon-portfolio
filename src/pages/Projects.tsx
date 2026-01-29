@@ -1,5 +1,4 @@
 import { useState, type ReactElement } from 'react';
-import SectionHeader from '@/components/main/SectionHeader';
 import CardStackLayout from '@/components/projects/CardStackLayout';
 import type { ProjectT } from '@/types/type';
 import CardGridLayout from '@/components/projects/CardGridLayout';
@@ -48,7 +47,6 @@ const Projects = (): ReactElement => {
 
   return (
     <div className="flex w-full flex-col">
-      <SectionHeader title="Projects" />
       <div className="my-12 space-y-6">
         <div className="flex flex-wrap gap-2.5 text-sm">
           <div className="space-x-2.5">
