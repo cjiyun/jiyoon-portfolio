@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { S } from '@/components/main';
 import { useDrawerNavEffects } from '@/hooks/useDrawerNavEffects';
-import { motion } from 'framer-motion';
+import { useThemeMode } from '@/hooks/useThemeMode';
+import { themes } from '@/styles/theme';
 import { buttonVariants } from '@/animations/variants';
 import type { SectionId } from '@/pages/sections';
 
@@ -31,6 +33,8 @@ const DrawerNav = ({
   onNavigate,
 }: MobileDrawerNavProps) => {
   useDrawerNavEffects({ isOpen, onClose });
+  const { nextMode } = useThemeMode();
+  const nextTheme = themes[nextMode];
 
   const onToggleDrawer = () => {
     if (isOpen) onClose();
@@ -97,6 +101,7 @@ const DrawerNav = ({
             whileTap="tap"
             onClick={onToggleTheme}
             aria-label="테마 토글"
+            $bg={nextTheme.colors.background.bg2}
           />
         </Menu>
       </Drawer>

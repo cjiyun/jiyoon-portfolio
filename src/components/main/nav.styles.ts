@@ -39,11 +39,11 @@ export const ActiveHighlight = styled(motion.span)`
   z-index: -1;
 `;
 
-export const ThemeChip = styled(motion.button)`
+export const ThemeChip = styled(motion.button)<{ $bg: string }>`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.background.bg2};
+  background-color: ${({ $bg }) => $bg};
   transition: background-color 350ms;
 
   @media (max-width: 1440px) {

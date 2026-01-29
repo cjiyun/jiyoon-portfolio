@@ -4,6 +4,8 @@ import { motion, LayoutGroup } from 'framer-motion';
 import { type SectionId } from '@/pages/sections';
 import { buttonVariants } from '@/animations/variants';
 import { S } from '@/components/main';
+import { useThemeMode } from '@/hooks/useThemeMode';
+import { themes } from '@/styles/theme';
 
 type Item = { id: SectionId; label: string };
 
@@ -26,6 +28,9 @@ const HeaderNav = ({
   onLogoClick,
   onNavigate,
 }: HeaderNavProps) => {
+  const { nextMode } = useThemeMode();
+  const nextTheme = themes[nextMode];
+
   return (
     <HeaderContainer ref={headerRef}>
       <Logo type="button" onClick={onLogoClick}>
@@ -71,6 +76,8 @@ const HeaderNav = ({
         whileHover="hover"
         whileTap="tap"
         onClick={onToggleTheme}
+        aria-label="테마 토글"
+        $bg={nextTheme.colors.background.bg2}
       />
     </HeaderContainer>
   );
