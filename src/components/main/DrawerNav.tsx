@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
+import type { RefObject } from 'react';
 import { S } from '@/components/main';
 import { useDrawerNavEffects } from '@/hooks/useDrawerNavEffects';
 import { useThemeMode } from '@/hooks/useThemeMode';
@@ -10,6 +11,7 @@ import type { SectionId } from '@/pages/sections';
 type Item = { id: SectionId; label: string };
 
 interface MobileDrawerNavProps {
+  headerRef: RefObject<HTMLElement | null>;
   items: ReadonlyArray<Item>;
   activeId: SectionId;
   activeMenuId: Exclude<SectionId, 'thumbnail'> | null;
@@ -22,6 +24,7 @@ interface MobileDrawerNavProps {
 }
 
 const DrawerNav = ({
+  headerRef,
   items,
   activeId,
   activeMenuId,
@@ -43,7 +46,7 @@ const DrawerNav = ({
 
   return (
     <Wrapper>
-      <TopBar>
+      <TopBar ref={headerRef}>
         <Logo type="button" onClick={onLogoClick}>
           JIYOON
         </Logo>
@@ -111,7 +114,7 @@ const DrawerNav = ({
 
 export default DrawerNav;
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -123,7 +126,7 @@ const Wrapper = styled.header`
   }
 `;
 
-const TopBar = styled.div`
+const TopBar = styled.header`
   position: fixed;
   left: 0;
   top: 0;

@@ -1,6 +1,7 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PORTFOLIO_SECTIONS, type SectionId } from '@/pages/sections';
 import { useActiveSectionOnScroll } from '@/hooks/useActiveSectionOnScroll';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 type MenuSectionId = Exclude<SectionId, 'thumbnail'>;
 
@@ -8,10 +9,15 @@ export const useNavigation = () => {
   const headerRef = useRef<HTMLElement | null>(null);
 
   const [activeId, setActiveId] = useState<SectionId>('thumbnail');
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const isHeaderNav = useMediaQuery('(min-width: 821px)');
+
+  useEffect(() => {
+    if (isHeaderNav) setDrawerOpen(false);
+  }, [isHeaderNav]);
 
   const items = useMemo(() => PORTFOLIO_SECTIONS.filter(s => s.id !== 'thumbnail'), []);
-
   const activeMenuId: MenuSectionId | null =
     activeId === 'thumbnail' ? null : (activeId as MenuSectionId);
 
@@ -31,15 +37,15 @@ export const useNavigation = () => {
     window.scrollTo({ top, behavior: 'smooth' });
   }, []);
 
-  const openMobile = useCallback(() => setMobileOpen(true), []);
-  const closeMobile = useCallback(() => setMobileOpen(false), []);
+  const openDrawer = useCallback(() => setDrawerOpen(true), []);
+  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
   const onNavigate = useCallback(
     (id: SectionId) => {
       scrollToSection(id);
-      closeMobile();
+      closeDrawer();
     },
-    [scrollToSection, closeMobile]
+    [scrollToSection, closeDrawer]
   );
 
   const scrollToTop = useCallback(() => onNavigate('thumbnail'), [onNavigate]);
@@ -49,11 +55,12 @@ export const useNavigation = () => {
     items,
     activeId,
     activeMenuId,
-    mobileOpen,
-    openMobile,
-    closeMobile,
+    drawerOpen,
+    openDrawer,
+    closeDrawer,
     onNavigate,
     scrollToTop,
     scrollToSection,
+    isHeaderNav,
   };
 };

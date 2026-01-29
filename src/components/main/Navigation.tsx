@@ -12,15 +12,16 @@ const Navigation = ({ onToggleTheme }: NavigationProps) => {
     items,
     activeId,
     activeMenuId,
-    mobileOpen,
-    openMobile,
-    closeMobile,
+    drawerOpen,
+    openDrawer,
+    closeDrawer,
     onNavigate,
     scrollToTop,
+    isHeaderNav,
   } = useNavigation();
 
-  return (
-    <>
+  if (isHeaderNav) {
+    return (
       <HeaderNav
         headerRef={headerRef}
         items={items}
@@ -30,19 +31,22 @@ const Navigation = ({ onToggleTheme }: NavigationProps) => {
         onLogoClick={scrollToTop}
         onNavigate={onNavigate}
       />
+    );
+  }
 
-      <DrawerNav
-        items={items}
-        activeId={activeId}
-        activeMenuId={activeMenuId}
-        isOpen={mobileOpen}
-        onOpen={openMobile}
-        onClose={closeMobile}
-        onToggleTheme={onToggleTheme}
-        onLogoClick={() => onNavigate('thumbnail')}
-        onNavigate={onNavigate}
-      />
-    </>
+  return (
+    <DrawerNav
+      headerRef={headerRef}
+      items={items}
+      activeId={activeId}
+      activeMenuId={activeMenuId}
+      isOpen={drawerOpen}
+      onOpen={openDrawer}
+      onClose={closeDrawer}
+      onToggleTheme={onToggleTheme}
+      onLogoClick={() => onNavigate('thumbnail')}
+      onNavigate={onNavigate}
+    />
   );
 };
 
