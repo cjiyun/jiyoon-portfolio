@@ -1,12 +1,13 @@
-// import { useThemeMode } from '@/hooks/useThemeMode';
+import { useThemeMode } from '@/hooks/useThemeMode';
 import { PortfolioSections } from '@/pages/PortfolioSections';
+import Navigation from '@/components/main/Navigation';
 
 export const Layout = () => {
-  // const { toggleMode } = useThemeMode();
+  const { toggleMode } = useThemeMode();
 
   return (
     <>
-      {/*<Sidebar onToggleTheme={toggleMode} />*/}
+      <Navigation onToggleTheme={toggleMode} />
       <div className="relative">
         <PortfolioSections />
       </div>
