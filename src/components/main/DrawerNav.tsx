@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { useEffect } from 'react';
-import type { SectionId } from '@/pages/sections';
+import { S } from '@/components/main';
+import { useDrawerNavEffects } from '@/hooks/useDrawerNavEffects';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '@/animations/variants';
-import { S } from '@/components/main';
+import type { SectionId } from '@/pages/sections';
 
 type Item = { id: SectionId; label: string };
 
@@ -30,16 +30,7 @@ const DrawerNav = ({
   onLogoClick,
   onNavigate,
 }: MobileDrawerNavProps) => {
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [isOpen, onClose]);
+  useDrawerNavEffects({ isOpen, onClose });
 
   const onToggleDrawer = () => {
     if (isOpen) onClose();
@@ -48,13 +39,11 @@ const DrawerNav = ({
 
   return (
     <Wrapper>
-      {/* 1) 닫힘 상태: 로고 + 메뉴 아이콘 / 6) 열림 상태: ThemeChip이 X 옆 */}
       <TopBar>
         <Logo type="button" onClick={onLogoClick}>
           JIYOON
         </Logo>
 
-        {/* 2) same button: hamburger <-> X  */}
         <HamburgerButton
           type="button"
           onClick={onToggleDrawer}
@@ -134,7 +123,6 @@ const TopBar = styled.div`
   left: 0;
   top: 0;
   z-index: 140;
-  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: space-between;
