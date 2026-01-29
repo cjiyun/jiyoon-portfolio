@@ -42,10 +42,17 @@ export const useNavigation = () => {
 
   const onNavigate = useCallback(
     (id: SectionId) => {
+      if (drawerOpen) {
+        closeDrawer();
+        requestAnimationFrame(() => {
+          scrollToSection(id);
+        });
+        return;
+      }
+
       scrollToSection(id);
-      closeDrawer();
     },
-    [scrollToSection, closeDrawer]
+    [drawerOpen, closeDrawer, scrollToSection]
   );
 
   const scrollToTop = useCallback(() => onNavigate('thumbnail'), [onNavigate]);

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 
 type UseDrawerNavEffectsParams = {
   isOpen: boolean;
@@ -18,17 +18,19 @@ export const useDrawerNavEffects = ({ isOpen, onClose }: UseDrawerNavEffectsPara
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [isOpen, onClose]);
 
-  // 배경 스크롤 락 (position: fixed)
-  useEffect(() => {
+  // 배경 스크롤 락
+  useLayoutEffect(() => {
     if (!isOpen) return;
 
     const body = document.body;
     const scrollY = window.scrollY;
 
-    const prevBodyOverflow = body.style.overflow;
-    const prevBodyPosition = body.style.position;
-    const prevBodyTop = body.style.top;
-    const prevBodyWidth = body.style.width;
+    const prev = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+    };
 
     body.style.overflow = 'hidden';
     body.style.position = 'fixed';
@@ -36,10 +38,10 @@ export const useDrawerNavEffects = ({ isOpen, onClose }: UseDrawerNavEffectsPara
     body.style.width = '100%';
 
     return () => {
-      body.style.overflow = prevBodyOverflow;
-      body.style.position = prevBodyPosition;
-      body.style.top = prevBodyTop;
-      body.style.width = prevBodyWidth;
+      body.style.overflow = prev.overflow;
+      body.style.position = prev.position;
+      body.style.top = prev.top;
+      body.style.width = prev.width;
 
       window.scrollTo(0, scrollY);
     };
