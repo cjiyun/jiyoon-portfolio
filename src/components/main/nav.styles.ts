@@ -9,7 +9,6 @@ export const MenuLabel = styled(motion.span)<{ $active: boolean }>`
   ${({ theme }) => theme.fonts.labelM};
   font-weight: 400;
   color: ${({ theme, $active }) => ($active ? theme.colors.blue.blue500 : theme.colors.text.text1)};
-  transition: color 200ms;
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue.blue300};
