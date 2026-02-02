@@ -7,6 +7,12 @@ export const getNextMode = (mode: ThemeMode) => {
   return THEME_ORDER[(idx + 1) % THEME_ORDER.length];
 };
 
+export const getSystemDefaultMode = (): ThemeMode => {
+  if (typeof window === 'undefined') return 'light';
+  const mq = window.matchMedia?.('(prefers-color-scheme: dark)');
+  return mq?.matches ? 'dark' : 'light';
+};
+
 export type ThemeModeContextValue = {
   mode: ThemeMode;
   nextMode: ThemeMode;
