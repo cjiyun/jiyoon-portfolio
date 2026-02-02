@@ -94,7 +94,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 30px;
+  padding: 16px 30px;
   background-color: ${({ theme }) => theme.colors.background.bg1} / 25;
   backdrop-filter: blur(12px);
 
@@ -129,5 +129,5 @@ const MenuItem = styled(motion.button)`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 14px 20px;
+  padding: 10px 16px;
 `;

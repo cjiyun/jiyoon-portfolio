@@ -6,7 +6,7 @@ export const MenuLabel = styled(motion.span)<{ $active: boolean }>`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  ${({ theme }) => theme.fonts.labelM};
+  ${({ theme }) => theme.fonts.labelS};
   font-weight: 400;
   color: ${({ theme, $active }) => ($active ? theme.colors.blue.blue500 : theme.colors.text.text1)};
 
@@ -40,8 +40,8 @@ export const ActiveHighlight = styled(motion.span)`
 `;
 
 export const ThemeChip = styled(motion.button)<{ $bg: string }>`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: ${({ $bg }) => $bg};
   transition: background-color 350ms;
