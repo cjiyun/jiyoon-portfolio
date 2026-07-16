@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { ThemeProvider } from '@/provider/ThemeProvider';
+import { ThemeModeProvider } from '@/provider/ThemeModeProvider';
+import { useThemeMode } from '@/hooks/useThemeMode';
+import GlobalStyle from '@/styles/GlobalStyle';
 import Sidebar from '@/components/main/Sidebar';
 import Thumbnail from '@/pages/Thumbnail';
 import AboutMe from '@/pages/AboutMe';
@@ -7,15 +10,13 @@ import Projects from '@/pages/Projects';
 import Contact from '@/pages/Contact';
 import '@/App.css';
 
-function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  };
+function AppContent() {
+  const { mode, toggleMode } = useThemeMode();
 
   return (
     <>
-      <Sidebar theme={theme} onToggleTheme={toggleTheme} />
+      <GlobalStyle />
+      <Sidebar theme={mode} onToggleTheme={toggleMode} />
       <div className="relative">
         <Thumbnail />
         <div className="bg-white px-[5%] lg:px-[10%] lg:pr-[calc(10%+100px)]">
@@ -34,6 +35,16 @@ function App() {
         </div>
       </div>
     </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeModeProvider>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </ThemeModeProvider>
   );
 }
 
