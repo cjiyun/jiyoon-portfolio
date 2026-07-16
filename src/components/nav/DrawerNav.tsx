@@ -10,7 +10,7 @@ import type { SectionId } from '@/pages/sections';
 
 type Item = { id: SectionId; label: string };
 
-interface MobileDrawerNavProps {
+interface DrawerNavProps {
   headerRef: RefObject<HTMLElement | null>;
   items: ReadonlyArray<Item>;
   activeId: SectionId;
@@ -34,7 +34,7 @@ const DrawerNav = ({
   onToggleTheme,
   onLogoClick,
   onNavigate,
-}: MobileDrawerNavProps) => {
+}: DrawerNavProps) => {
   useDrawerNavEffects({ isOpen, onClose });
   const { nextMode } = useThemeMode();
   const nextTheme = themes[nextMode];

@@ -3,7 +3,7 @@ import { css, Global } from '@emotion/react';
 const GlobalStyle = () => {
   return (
     <Global
-      styles={css`
+      styles={theme => css`
         @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 
         @font-face {
@@ -49,19 +49,14 @@ const GlobalStyle = () => {
           --vh: 100%;
         }
 
-        #root {
-          margin: 0 auto;
-          padding: 0;
-        }
-
         body,
         html {
-          overflow-x: hidden;
           margin: 0 auto;
           padding: 0;
           color: black;
           overscroll-behavior: none; /* 바운스/당김 새로고침 막음 */
           font-family: 'Pretendard', sans-serif;
+          background-color: ${theme.colors.background.bg1};
         }
 
         button {

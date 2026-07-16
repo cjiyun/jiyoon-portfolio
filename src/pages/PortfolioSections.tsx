@@ -4,7 +4,13 @@ export const PortfolioSections = () => {
   return (
     <div>
       {PORTFOLIO_SECTIONS.map(({ id, index, Component }) => (
-        <section key={id} id={id} data-index={index} className="scroll-section">
+        <section
+          key={id}
+          id={id}
+          data-index={index}
+          aria-labelledby={`${id}-title`}
+          className="scroll-section"
+        >
           <Component />
         </section>
       ))}

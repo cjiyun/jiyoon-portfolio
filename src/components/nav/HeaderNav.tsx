@@ -95,7 +95,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   padding: 16px 30px;
-  background-color: ${({ theme }) => theme.colors.background.bg1} / 25;
   backdrop-filter: blur(12px);
 
   @media (max-width: 820px) {

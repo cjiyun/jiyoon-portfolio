@@ -14,10 +14,6 @@ export const MenuLabel = styled(motion.span)<{ $active: boolean }>`
     color: ${({ theme }) => theme.colors.blue.blue300};
   }
 
-  @media (max-width: 1440px) {
-    ${({ theme }) => theme.fonts.labelS};
-  }
-
   @media (max-width: 820px) {
     ${({ theme }) => theme.fonts.labelXS};
   }
@@ -45,11 +41,6 @@ export const ThemeChip = styled(motion.button)<{ $bg: string }>`
   border-radius: 50%;
   background-color: ${({ $bg }) => $bg};
   transition: background-color 350ms;
-
-  @media (max-width: 1440px) {
-    width: 40px;
-    height: 40px;
-  }
 
   @media (max-width: 820px) {
     width: 30px;
