@@ -1,9 +1,15 @@
 import type { Variants } from 'framer-motion';
 
 export const buttonVariants = {
-  hover: { backgroundColor: '#0073a1', color: '#fff', borderColor: '#0073a1' },
-  tap: { scale: 0.95 },
-};
+  rest: { y: 0, scale: 1 },
+  hover: { y: -2, scale: 1, transition: { duration: 0.12, ease: 'easeOut' } },
+  tap: { y: 0, scale: 0.95, transition: { duration: 0.08, ease: 'easeOut' } },
+} as const;
+
+export const imgVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.06, transition: { duration: 0.24, ease: 'easeOut' } },
+} as const;
 
 export const iconVariants = {
   hover: { color: '#0073a1', transition: { duration: 0 } },
