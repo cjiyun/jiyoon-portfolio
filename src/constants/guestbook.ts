@@ -1,0 +1,2 @@
+export const GUESTBOOK_NAME_MAX_LEN = 20;
+export const GUESTBOOK_CONTENT_MAX_LEN = 200;
