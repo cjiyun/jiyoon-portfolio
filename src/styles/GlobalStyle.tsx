@@ -59,6 +59,17 @@ const GlobalStyle = () => {
           background-color: ${theme.colors.background.bg1};
         }
 
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          padding: 0;
+          margin: 0;
+        }
+
         button {
           cursor: pointer;
           padding: 0;
@@ -74,13 +85,40 @@ const GlobalStyle = () => {
           &:focus {
             outline: none;
           }
+
           &:active {
             outline: none;
           }
+
+          &:disabled {
+            color: ${theme.colors.text.text5};
+            background-color: ${theme.colors.background.disabled};
+            cursor: not-allowed;
+          }
+
+          &:focus-visible {
+            outline: 2px solid ${theme.colors.brand.primary};
+            outline-offset: 3px;
+          }
         }
 
-        ::-webkit-scrollbar {
-          display: none;
+        *::-webkit-scrollbar {
+          width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+          border: 2px solid transparent;
+          border-radius: 999px;
+          background-color: ${theme.colors.neutral.neutral300};
+          background-clip: content-box;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+          background-color: ${theme.colors.neutral.neutral400};
         }
       `}
     />

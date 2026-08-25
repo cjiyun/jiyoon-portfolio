@@ -1,6 +1,7 @@
 export const lightColors = {
   brand: {
     primary: '#082C78',
+    accent: '#06225D',
   },
   text: {
     text1: '#1D1D1D',
@@ -15,7 +16,8 @@ export const lightColors = {
     bg1: '#FFFFFF',
     bg2: '#F6F8FA',
     bg3: '#ECF0FA',
-    hover: '#ECF0FA',
+    hover: '#E4E7F1',
+    disabled: '#E6E6E6',
   },
   border: {
     border1: '#CCCCCC',
@@ -26,9 +28,11 @@ export const lightColors = {
     divider2: '#CCCCCC',
   },
   semantic: {
-    success: '#0094F7',
-    warning: '#E7CD3F',
+    success: '#00A63E',
+    successSoft: '#DCFCE7',
     error: '#FF2C3D',
+    errorAccent: '#E31222',
+    errorSoft: '#FAE3E2',
   },
   neutral: {
     neutral1100: '#000000',
@@ -46,20 +50,21 @@ export const lightColors = {
     neutral0: '#FFFFFF',
   },
   blue: {
-    blue900: '#04163C',
     blue700: '#082C78',
-    blue500: '#1E51D4',
-    blue300: '#5E8BFF',
-    blue100: '#A3BEFF',
+    blue500: '#0E4ED8',
+    blue400: '#0D6EFD',
+    blue300: '#5789F4',
   },
   gradient: {
-    hover: 'linear-gradient(90deg, #1E51D4 0%, #5E8BFF 100%)',
+    card: 'linear-gradient(90deg, #5789F4 0%, #9DBDFA 38%, #CFE2FF 100%)',
+    button: 'linear-gradient(90deg, #0E4ED8 0%, #5E8BFF 100%)',
   },
 } as const;
 
 export const darkColors = {
   brand: {
-    primary: '#3F63E9',
+    primary: '#0D6EFD',
+    accent: '#0E64E3',
   },
   text: {
     text1: '#E6E6E6',
@@ -75,6 +80,7 @@ export const darkColors = {
     bg2: '#2F343A',
     bg3: '#384157',
     hover: '#384157',
+    disabled: '#4D4D4D',
   },
   border: {
     border1: '#4D4D4D',
@@ -85,9 +91,11 @@ export const darkColors = {
     divider2: '#666666',
   },
   semantic: {
-    success: '#0094F7',
-    warning: '#E7CD3F',
-    error: '#FF4C00',
+    success: '#00A63E',
+    successSoft: '#DCFCE7',
+    error: '#FF2C3D',
+    errorAccent: '#CF2230',
+    errorSoft: '#FAE3E2',
   },
   neutral: {
     neutral100: '#000000',
@@ -105,13 +113,14 @@ export const darkColors = {
     neutral0: '#FFFFFF',
   },
   blue: {
-    blue900: '#082C78',
-    blue700: '#1E51D4',
-    blue500: '#5E8BFF',
-    blue300: '#A3BEFF',
+    blue700: '#082C78',
+    blue500: '#0E4ED8',
+    blue400: '#0D6EFD',
+    blue300: '#5789F4',
   },
   gradient: {
-    hover: 'linear-gradient(90deg, #5E8BFF 0%, #A3BEFF 100%)',
+    card: 'linear-gradient(90deg, #5789F4 0%, #9DBDFA 38%, #CFE2FF 100%)',
+    button: 'linear-gradient(90deg, #0E4ED8 0%, #5E8BFF 100%)',
   },
 } as const;
 

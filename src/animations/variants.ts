@@ -12,24 +12,10 @@ export const imgVariants = {
 } as const;
 
 export const iconVariants = {
-  hover: { color: '#0073a1', transition: { duration: 0 } },
-  tap: { scale: 0.8 },
-};
-
-export const sidebar = {
-  container: {
-    animate: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  },
-  item: {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 10 },
-  },
-};
+  rest: { y: 0, scale: 1 },
+  hover: { y: -2, scale: 1.02, transition: { duration: 0.18, ease: 'easeOut' } },
+  tap: { y: 0, scale: 0.98, transition: { duration: 0.08, ease: 'easeOut' } },
+} satisfies Variants;
 
 export const cardStackVariants: Variants = {
   initial: { x: 0, y: 0, opacity: 1, rotate: 0 },

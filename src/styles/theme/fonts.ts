@@ -15,7 +15,7 @@ const createFontStyleNew = (family: string, weight: number, size: number, lineHe
 `;
 
 export const fonts = {
-  title1: createFontStyle('Racing Sans One', 400, 36, 145),
+  title1: createFontStyle('Pretendard', 700, 36, 145),
   title2: createFontStyle('Pretendard', 600, 32, 145),
   title3: createFontStyle('Pretendard', 600, 24, 145),
   title4: createFontStyle('Pretendard', 600, 18, 145),
@@ -29,7 +29,7 @@ export const fonts = {
   body1: createFontStyle('Pretendard', 400, 40, 145),
   body2: createFontStyle('Pretendard', 400, 28, 145),
   body3: createFontStyle('Pretendard', 400, 16, 145),
-  body4: createFontStyle('Pretendard', 500, 14, 145),
+  body4: createFontStyle('Pretendard', 400, 15, 145),
   body5: createFontStyle('Pretendard', 400, 14, 145),
   caption: createFontStyle('Pretendard', 400, 12, 145),
 };

@@ -8,9 +8,7 @@ export const Layout = () => {
   return (
     <>
       <Navigation onToggleTheme={toggleMode} />
-      <div className="relative">
-        <PortfolioSections />
-      </div>
+      <PortfolioSections />
     </>
   );
 };

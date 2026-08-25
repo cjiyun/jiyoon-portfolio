@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import type { ProjectT, ProjectRotation } from '@/types/type';
 import { IconButton } from '@/components/common/IconButton';
@@ -44,7 +44,12 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
   return (
     <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-6">
       <div className="flex w-full items-center justify-between">
-        <button onClick={() => setAction('prev')} className="cursor-pointer">
+        <button
+          type="button"
+          onClick={() => setAction('prev')}
+          className="cursor-pointer"
+          aria-label="이전 프로젝트 보기"
+        >
           <IoIosArrowBack size={36} />
         </button>
         <div className="aspect-card h-[240px] sm:h-[300px]" style={{ perspective: 800 }}>
@@ -62,7 +67,12 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
             />
           ))}
         </div>
-        <button onClick={() => setAction('next')} className="cursor-pointer">
+        <button
+          type="button"
+          onClick={() => setAction('next')}
+          className="cursor-pointer"
+          aria-label="다음 프로젝트 보기"
+        >
           <IoIosArrowForward size={36} />
         </button>
       </div>
@@ -80,10 +90,11 @@ const CardStackLayout = ({ filtered }: CardStackLayoutProps) => {
             ))}
           </div>
           <div className="flex gap-2">
-            <IconButton>
-              <AiOutlineSearch size={25} />
-            </IconButton>
-            <IconButton href={filtered[frontIdx].github}>
+            <IconButton
+              href={filtered[frontIdx].github}
+              target="_blank"
+              aria-label={`${filtered[frontIdx].title} GitHub 저장소 열기`}
+            >
               <AiFillGithub size={25} />
             </IconButton>
           </div>

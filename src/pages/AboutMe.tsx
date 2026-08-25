@@ -33,11 +33,19 @@ const AboutMe = (): ReactElement => {
               <div className="flex gap-2.5">
                 <h1 className="truncate text-2xl leading-none font-bold">최지윤</h1>
                 <div className="flex items-end gap-1.5">
-                  {[AiFillGithub, AiOutlineMail].map((Icon, idx) => (
-                    <IconButton key={idx}>
-                      <Icon size={20} />
-                    </IconButton>
-                  ))}
+                  <IconButton
+                    href="https://github.com/cjiyun/"
+                    target="_blank"
+                    aria-label="최지윤 GitHub 프로필 열기"
+                  >
+                    <AiFillGithub size={20} />
+                  </IconButton>
+                  <IconButton
+                    href="mailto:chlwldbs78@gmail.com"
+                    aria-label="최지윤에게 이메일 보내기"
+                  >
+                    <AiOutlineMail size={20} />
+                  </IconButton>
                 </div>
               </div>
               <span className="text-bluePrimary text-xs">#도전 #끈기 #성장 #UI/UX</span>
